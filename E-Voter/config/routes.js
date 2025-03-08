@@ -11,6 +11,7 @@
 module.exports.routes = {
   '/': { view: 'pages/homepage' },
   '/feedback': { view: 'pages/feedback' },
-  '/location': { view: 'pages/location' },
   '/videos': { view: 'pages/videos' },
+  '/location': { view: 'pages/location' },
+  'GET /api/location': 'LocationController.find',
 };
