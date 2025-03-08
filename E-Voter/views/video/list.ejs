@@ -1,1 +1,9 @@
+<h1>Videos Now Available</h1>
+
+<% videos.forEach(function(video) { %>
+  <div>
+    <h3><a href="/video/play/<%= video.id %>"><%= video.title %></a></h3>
+    <p><%= video.description %></p>
+  </div>
+<% }); %>
 
