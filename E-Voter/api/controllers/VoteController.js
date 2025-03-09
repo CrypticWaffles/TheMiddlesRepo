@@ -8,7 +8,7 @@
 module.exports = {
   voteEntryYes: async function (req, res) {
     try {
-        await Vote.create({ VideoId: "Vid",choice: true, zipId: "Zip"});
+        await Vote.create({ VideoId: 1,choice: true, zipId: "Zip"});
 
         return res.redirect({ someField: '/feedback'});
     } catch (err) {
@@ -17,7 +17,7 @@ module.exports = {
   },
   voteEntryNo: async function (req, res) {
     try {
-        await Vote.create({ VideoId: "Vid",choice: false, zipId: "Zip"});
+        await Vote.create({ VideoId: 1,choice: false, zipId: "Zip"});
 
         return res.redirect({ someField: '/feedback'});
     } catch (err) {
