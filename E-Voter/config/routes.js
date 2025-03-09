@@ -12,13 +12,9 @@ module.exports.routes = {
   '/': { view: 'pages/homepage' },
   '/feedback': { view: 'pages/feedback' },
   '/location': { view: 'pages/location' },
-  '/videos': { view: 'pages/videos' },
-};
-
-module.exports.routes = {
+  //'/videos': { view: 'pages/videos' },
   // Route for listing videos
   'GET /video/list': 'VideoController.list',
-  
   // Route for playing a specific video
   'GET /video/play/:id': 'VideoController.play',
 };
