@@ -13,6 +13,9 @@ module.exports.routes = {
   '/feedback': { view: 'pages/feedback' },
   '/location': { view: 'pages/location' },
   '/videos': { view: 'pages/videos' },
+  '/vote': { view: 'pages/vote' },
+  'POST /vote-entryYes': 'VoteController.voteEntryYes',
+  'POST /vote-entryNo': 'VoteController.voteEntryNo',
 };
 
 module.exports.routes = {
