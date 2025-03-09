@@ -15,6 +15,8 @@ module.exports = {
 
     title: { type: 'string' },
 
+    description: { type: 'string' },
+
     url: { type: 'string' }
 
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
