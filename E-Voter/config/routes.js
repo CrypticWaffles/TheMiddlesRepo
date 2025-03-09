@@ -11,7 +11,9 @@
 module.exports.routes = {
   '/': { view: 'pages/homepage' },
   '/feedback': { view: 'pages/feedback' },
+  '/videos': { view: 'pages/videos' },
   '/location': { view: 'pages/location' },
+  'GET /api/location': 'LocationController.find',
   // Route for listing videos
   'GET /video/list': 'VideoController.list',
   // Route for playing a specific video
