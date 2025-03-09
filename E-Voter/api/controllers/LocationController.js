@@ -7,11 +7,15 @@
 const axios = require('axios'); //Used for making API calls
 
 module.exports = {
+<<<<<<< HEAD
   find: async function(req, res) {
     let zip = req.query.zip;
     if (!zip) { // Check if zip code is provided
       return res.status(400).json({ error: 'Missing zip code' });
     }
+=======
+
+>>>>>>> main
 
     let apiUrl = `https://api.zippopotam.us/us/${zip}`; // API endpoint
     try {
