@@ -19,4 +19,6 @@ module.exports.routes = {
   // Route for playing a specific video
   'GET /video/play/:id': 'VideoController.play',
   '/vote': { view: 'pages/vote' },
+  'POST /vote-entryYes': 'VoteController.voteEntryYes',
+  'POST /vote-entryNo': 'VoteController.voteEntryNo',
 };
