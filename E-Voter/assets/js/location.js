@@ -6,16 +6,18 @@
     */
 async function fetchLocation() {
   let zip = document.getElementById('zipCode').value;
+  let locationDiv = document.getElementById('locationResult');
+  let stateSpan = document.getElementById('state');
+  let citySpan = document.getElementById('city');
 
-  // Ensure a ZIP code was entered
+  // Hide the result section initially
+  locationDiv.style.display = 'none';
+
   if (!zip) {
-    document.getElementById('state').innerText = '';
-    document.getElementById('city').innerText = '';
     alert('Please enter a ZIP code');
     return;
   }
 
-  // Fetch location data
   try {
     let response = await fetch(`/api/location?zip=${zip}`);
     if (!response.ok) {
@@ -23,11 +25,13 @@ async function fetchLocation() {
     }
     let data = await response.json();
 
-    document.getElementById('state').innerText = data.state || 'N/A';
-    document.getElementById('city').innerText = data.city || 'N/A';
+    // Update the state and city spans
+    stateSpan.innerText = data.state || 'N/A';
+    citySpan.innerText = data.city || 'N/A';
+
+    // Show the location result section
+    locationDiv.style.display = 'block';
   } catch (error) {
-    document.getElementById('state').innerText = '';
-    document.getElementById('city').innerText = '';
     console.error('Fetch error:', error);
     alert('Error fetching location data.');
   }
