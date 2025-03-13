@@ -3,6 +3,9 @@
  *
  * @description :: Server-side actions for handling incoming requests.
  * @help        :: See https://sailsjs.com/docs/concepts/actions
+ *
+ * If you launch the app with `sails console`,
+ * you can acess the database directly using await 'Location.find()'
  */
 const axios = require('axios');
 
