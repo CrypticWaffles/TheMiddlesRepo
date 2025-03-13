@@ -1,4 +1,47 @@
 <div class="container">
-    <h2>Feedback</h2>
-    <!--Feedcback code here-->
+    <h2>Submit Feedback</h2>
+    <textarea name="feedback" id="feedbackMessage" class="form-control"></textarea>
+    <button onclick="submitFeedback()" class="btn btn-primary mt-2">Submit</button>
+    <p id="feedbackResponse" class="mt-2 text-success" style="display: none;"></p>
 </div>
+
+<script>
+    /**
+     * Submits the user's feedback to the server. If the feedback is empty, does nothing.
+     * 
+     */
+    function submitFeedback() {
+        // Get the feedback message
+        let feedbackMessage = document.getElementById('feedbackMessage').value;
+        let feedbackResponse = document.getElementById('feedbackResponse');
+
+        // Check if feedback message is empty
+        if (!feedbackMessage.trim()) {
+            console.log('No feedback entered');
+            return;
+        }
+        
+        // Send the feedback to the server via POST method
+        fetch('/feedback', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ message: feedbackMessage })
+        })
+        // Handle the response
+        .then(response => response.json())
+        // Display success message
+        .then(data => {
+            console.log('Feedback saved successfully');
+            //alert('Feedback saved successfully');
+            feedbackResponse.innerText = "Thank you for submitting the feedback!";
+            feedbackResponse.style.display = "block";
+        })
+        // Handle errors
+        .catch(error => {
+            console.error('Error saving feedback:', error);
+            alert('Error saving feedback. Please try again.');
+        });
+    }
+</script>
