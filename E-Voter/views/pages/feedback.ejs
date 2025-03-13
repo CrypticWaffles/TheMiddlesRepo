@@ -2,6 +2,7 @@
     <h2>Submit Feedback</h2>
     <textarea name="feedback" id="feedbackMessage" class="form-control"></textarea>
     <button onclick="submitFeedback()" class="btn btn-primary mt-2">Submit</button>
+    <p id="feedbackResponse" class="mt-2 text-success" style="display: none;"></p>
 </div>
 
 <script>
@@ -12,6 +13,7 @@
     function submitFeedback() {
         // Get the feedback message
         let feedbackMessage = document.getElementById('feedbackMessage').value;
+        let feedbackResponse = document.getElementById('feedbackResponse');
 
         // Check if feedback message is empty
         if (!feedbackMessage.trim()) {
@@ -32,7 +34,9 @@
         // Display success message
         .then(data => {
             console.log('Feedback saved successfully');
-            alert('Feedback saved successfully');
+            //alert('Feedback saved successfully');
+            feedbackResponse.innerText = "Thank you for submitting the feedback!";
+            feedbackResponse.style.display = "block";
         })
         // Handle errors
         .catch(error => {
