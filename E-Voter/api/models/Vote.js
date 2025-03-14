@@ -14,7 +14,7 @@ module.exports = {
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
 
     VideoId: { type: 'number' },
-    zipId: { type: 'string' },
+    zipId: { type: 'number' },
 
     choice: { type: 'boolean' }
 

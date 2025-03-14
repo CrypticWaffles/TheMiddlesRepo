@@ -1,10 +1,12 @@
+<script>
+    function vote(vote) {
+        Vote.create({ VideoId: 1,choice: vote, zipId: 1});
+        window.location.href = "/feedback";
+    }
+</script>
 <div class="container">
     <h2>Voting</h2>
-
-    <form action="/vote-entryYes" method="POST">
-        <button type="submit">Yes</button>
-    </form>
-    <form action="/vote-entryNo" method="POST">
-        <button type="submit">No</button>
-    </form>
+    
+    <button onclick="vote(true)">Yes</button>
+    <button onclick="vote(false)">No</button>
 </div>
