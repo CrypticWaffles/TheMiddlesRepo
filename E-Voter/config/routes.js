@@ -10,13 +10,19 @@
 
 module.exports.routes = {
   '/': { view: 'pages/homepage' },
-  '/feedback': { view: 'pages/feedback' },
-  '/videos': { view: 'pages/videos' },
-  '/location': { view: 'pages/location' },
-  'GET /api/location': 'LocationController.find',
+  // Feedback
+  '/feedback': { view: 'pages/feedback' }, // Feedback Page
+  'POST /feedback': 'FeedbackController.create', // Feedback method
+  //'/videos': { view: 'pages/videos' },
+  // ZIP
+  '/location': { view: 'pages/location' }, // ZIP Page
+  'GET /api/location': 'LocationController.find', // ZIP method
+  // Videos
   // Route for listing videos
   'GET /video/list': 'VideoController.list',
   // Route for playing a specific video
   'GET /video/play/:id': 'VideoController.play',
   '/vote': { view: 'pages/vote' },
+  'POST /vote-entryYes': 'VoteController.voteEntryYes',
+  'POST /vote-entryNo': 'VoteController.voteEntryNo',
 };
