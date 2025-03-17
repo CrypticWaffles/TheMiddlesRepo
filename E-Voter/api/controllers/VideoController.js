@@ -33,6 +33,11 @@ module.exports = {
     }
   },
 
+  // Action to display the add video form
+  add: function(req, res) {
+    return res.view('video/add');  // The form to add a video
+  },
+
   // Action to handle video upload
   upload: async function(req, res) {
     try {
@@ -53,7 +58,7 @@ module.exports = {
           return res.badRequest('No video file uploaded.');
         }
 
-        // Assuming you want to store the file details in the database
+        // Storing video details in the database
         const video = await Video.create({
           title: req.body.title || 'Untitled Video',
           description: req.body.description || '',
@@ -61,7 +66,7 @@ module.exports = {
           fileName: uploadedFiles[0].filename,
         }).fetch();
 
-        return res.redirect('/videos'); // Redirect to video list after upload
+        return res.redirect('/video/list'); // Redirect to video list after upload
       });
     } catch (err) {
       return res.serverError(err);
