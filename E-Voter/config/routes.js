@@ -20,6 +20,5 @@ module.exports.routes = {
   'POST /video/upload': 'VideoController.upload', // Handle video upload
 
   '/vote': { view: 'pages/vote' },
-  'POST /vote-entryYes': 'VoteController.voteEntryYes',
-  'POST /vote-entryNo': 'VoteController.voteEntryNo',
+  'POST /vote': 'VoteController.vote',
 };
