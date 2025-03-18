@@ -1,4 +1,21 @@
 <div class="container">
-    <h2>Videos</h2>
-    <!-- Videos here -->
+  <h2>Videos</h2>
+
+  <!-- Video Upload Form -->
+  <h3>Upload a New Video</h3>
+  <form action="/video/upload" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="title">Video Title:</label>
+      <input type="text" name="title" id="title" class="form-control" placeholder="Enter video title" required>
+    </div>
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea name="description" id="description" class="form-control" placeholder="Enter video description"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="video">Choose Video File:</label>
+      <input type="file" name="video" id="video" class="form-control" accept="video/*" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Upload Video</button>
+  </form>
 </div>
