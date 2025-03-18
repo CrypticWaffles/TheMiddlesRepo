@@ -6,23 +6,19 @@
  */
 
 module.exports = {
-  voteEntryYes: async function (req, res) {
+  vote: async function (req, res) {
     try {
-        await Vote.create({ VideoId: "Vid",choice: true, zipId: "Zip"});
+      // Extract the vote data from the request
+      let { VideoID, choice, zipId } = req.body;
 
-        return res.redirect({ someField: '/feedback'});
-    } catch (err) {
-        return res.serverError(err);
-    }
-  },
-  voteEntryNo: async function (req, res) {
-    try {
-        await Vote.create({ VideoId: "Vid",choice: false, zipId: "Zip"});
+      // Save the vote to the database
+      await Vote.create({ VideoId: VideoID,choice: choice, zipId: zipId});
 
-        return res.redirect({ someField: '/feedback'});
+      // Redirect to the feedback page
+      return res.redirect('/feedback');
     } catch (err) {
-        return res.serverError(err);
+      // Handle server errors
+      return res.serverError(err);
     }
-  },
+  }
 };
-
