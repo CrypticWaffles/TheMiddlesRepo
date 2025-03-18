@@ -10,15 +10,10 @@ module.exports.routes = {
   'GET /api/location': 'LocationController.find', // ZIP method
 
   // Videos
-  // Route for listing videos
-  'GET /video/list': 'VideoController.list',
-  // Route for playing a specific video
-  'GET /video/play/:id': 'VideoController.play',
-  // Route for uploading videos (display form)
-  '/video/upload': { view: 'video/upload' }, // Form to upload video
-  // Route to handle video upload (form submission)
-  'POST /video/upload': 'VideoController.upload', // Handle video upload
+  'GET /video/list': 'VideoController.list',  // Show all videos
+  'GET /video/play/:id': 'VideoController.play',  // Play a specific video
 
+  // Voting
   '/vote': { view: 'pages/vote' },
   'POST /vote': 'VoteController.vote',
 };

@@ -1,0 +1,10 @@
+<div class="container">
+    <h2>Available Videos</h2>
+    <ul>
+        <% videos.forEach(video => { %>
+            <li>
+                <a href="/video/play/<%= video.id %>"><%= video.title %></a>
+            </li>
+        <% }); %>
+    </ul>
+</div>
