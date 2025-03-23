@@ -12,4 +12,5 @@ module.exports = {
     // url
     url: { type: 'string',required: true },
   },
+  datastore: 'default'
 };
