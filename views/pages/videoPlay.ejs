@@ -11,6 +11,26 @@
         <button onclick="vote(false)" class="btn btn-danger">No</button>
     </div>
     <br>
-    <a href="/video/list" class="btn btn-primary">Back</a>
+    <a href="/gp/video/list" class="btn btn-primary">Back</a>
 </div>
-<script src="/js/vote.js"></script>
+<script>
+    async function vote(choice) {
+// Make a POST request to the server
+  let response = await fetch('/gp/vote', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      VideoID: 1, choice, zipId: 'Zip'
+    })
+  });
+
+  // Handle the response
+  if (response.ok) {
+    console.log('Vote submitted successfully');
+    window.location.href = '/gp/feedback';
+  } else {
+    console.error('Failed to submit vote');
+    alert('Failed to submit vote');
+  }
+}
+</script>
