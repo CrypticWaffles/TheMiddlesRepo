@@ -1,5 +1,5 @@
 /**
- * Vote.js
+ * Feedback.js
  *
  * @description :: A model definition represents a database table/collection.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
@@ -13,9 +13,7 @@ module.exports = {
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
 
-    VideoId: { type: 'number' },
-    zipId: { type: 'string' },
-    choice: { type: 'boolean' }
+    message: { type: 'string' }
 
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
     //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
@@ -27,6 +25,6 @@ module.exports = {
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
 
   },
-
+  datastore: 'default'
 };
 

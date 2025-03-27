@@ -1,4 +1,14 @@
-/**
+<div class="container">
+    <h2>Enter ZIP Code</h2>
+    <input id="zipCode" type="text" class="form-control" placeholder="Enter ZIP Code">
+    <button onclick="fetchLocation()" class="btn btn-primary mt-2">Lookup</button>
+    <div id="locationResult" class="mt-3" style="display: none;">
+        <p><strong>State: </strong><span id="state"></span> <strong>City: </strong><span id="city"></span></p>
+    </div>
+</div>
+
+<script>
+    /**
     * Fetches location data from the server for the given ZIP code and populates
     * the state and city spans with the data.
     *
@@ -19,7 +29,7 @@ async function fetchLocation() {
   }
 
   try {
-    let response = await fetch(`/api/location?zip=${zip}`);
+    let response = await fetch(`/gp/api/location?zip=${zip}`);
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
@@ -36,3 +46,4 @@ async function fetchLocation() {
     alert('Error fetching location data.');
   }
 }
+</script>
